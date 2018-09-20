@@ -1,0 +1,7 @@
+Diagrama uml(actividades)---Paola
+Diagrama de secuencias---Israel
+Diagrama de componentes---Jose
+Modelado DB---Carlos
+Manual de usuario---Patzari
+Manual de pruebas---Fernando
+Arquitectura de la info---Aldo
