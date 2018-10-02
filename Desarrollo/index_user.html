@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Control de sitios de Estacionamiento</title>
+    <!-- BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- GOOGLE FONTS (ROBOTO) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+
+
+
+  <!-- BODY  -->
+  <body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top color-nav">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">
+          <img src="img/logo.png" width="35" height="35" class="d-inline-block align-top" alt="Inicio">
+            F-Estacionamientos
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+          <form class="form-inline my-2 my-lg-0 ml-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese su búsqueda" aria-label="Search">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+
+          <!-- ml-auto -> MarginLeft-auto -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index_user.html">Inicio</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="perfil.html">Perfil</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="help.html">Ayuda</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 centrar">
+          <h1 class="mt-5">Bienvenido a este sitio de estacionamientos.</h1>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Selecciona una zona
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Zona 1</a>
+              <a class="dropdown-item" href="#">Zona 2</a>
+              <a class="dropdown-item" href="#">Zona 3</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-12">
+            <img src="img/gmaps.jpg" alt="Google Maps" style="width: 100%;">
+          </div>
+      </div>
+
+    </div>
+
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
