@@ -1,0 +1,14 @@
+/*Custom del body*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Custom nav-bar*/
+.color-nav {
+  background-color: #601408;
+}
+
+.centrar {
+  text-align: center;
+}
