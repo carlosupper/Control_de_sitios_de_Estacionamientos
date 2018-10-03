@@ -7,15 +7,17 @@
 }
 
 body{
-  background:##f2f2f2;
+  background:#1B1D35;
   font-size: 16px;
   font-family: "Open Sans", Arial, sans-serif, helvetica;
 }
 
 .wrap{
+  text-align: center;
   width: 90%;
   max-width: 500px;
   margin: auto;
+  color:#B8711B ;
 }
 
 form{
@@ -25,7 +27,7 @@ form{
   background: #fff;
   overflow: hidden;
   box-shadow: 0 0 3px grey;
-  border-top:4px solid #536DFE;
+  border-top:4px solid #B8711B;
 }
 /* Estilo a los inputs */
 form input[type="text"],
@@ -117,9 +119,11 @@ button:hover{
 
 .texto-registrate {
 	text-align: center;
+  color: #fff;
 }
 
 .texto-registrate a {
 	display: block;
 	font-size: 18px;
+  color: #B8711B;
 }
