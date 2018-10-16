@@ -11,6 +11,13 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+
+    <!--style>
+      #map {
+        width: 500px;
+        height: 500px;
+      }
+    </style-->
   </head>
 
 
@@ -77,11 +84,19 @@
         </div>
       </div>
 
+
+      <!-- GOOGLE MAPS -->
       <div class="row">
-          <div class="col-md-12">
-            <img src="img/gmaps.jpg" alt="Google Maps" style="width: 100%;">
-          </div>
+
+        <div id="map" class="col-md-12 my-5 " style="width: 100%;height: 500px;"></div>
+
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy1Lgx05CgWi-PxUgU2iw4P1pvaIWqL1Y&callback=initMap">
+        </script>
+        <script src="scripts/main.js"></script>
+
       </div>
+      <!---->
 
     </div>
 
