@@ -190,7 +190,7 @@ CREATE TABLE `tipo_usuarios` (
 --
 
 /*!40000 ALTER TABLE `tipo_usuarios` DISABLE KEYS */;
-INSERT INTO `tipo_usuarios` (`id_tipo`,`tipo`) VALUES 
+INSERT INTO `tipo_usuarios` (`id_tipo`,`tipo`) VALUES
  (1,'Usuario');
 /*!40000 ALTER TABLE `tipo_usuarios` ENABLE KEYS */;
 
@@ -220,7 +220,7 @@ CREATE TABLE `usuarios` (
 --
 
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` (`id_usuarios`,`nickname`,`nombre`,`appaterno`,`appmaterno`,`contrasena`,`correo`,`foto_perfil`,`usuario_tipo`) VALUES 
+INSERT INTO `usuarios` (`id_usuarios`,`nickname`,`nombre`,`appaterno`,`appmaterno`,`contrasena`,`correo`,`foto_perfil`,`usuario_tipo`) VALUES
  (9,'carls_fenix','carlos','hernandez','hernandez','9d21ef6da1fb7a3ac6f13dd6c25a8cabe70f7050e51cf2891e942ff303779b55de48f0c0f7ed5871571c3d1210cfda651085ff72b0012d888ea6aeddc8150347','nitsugahernandez@gmail.com',NULL,1),
  (10,'valee','valeria','maldonado','guerrero','3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79','vale@gmail.com',NULL,1),
  (11,'fenix','carlos','hernandez','hernandez','sayyeah1993','fenix@gmail.com',NULL,1);
