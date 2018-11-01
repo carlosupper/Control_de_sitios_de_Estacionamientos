@@ -1,7 +1,7 @@
 <?php session_start();
 
 if (isset($_SESSION['correo'])) {
-  header('Location: index.php');
+  header('Location: ../index_user.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a POST
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
     $query = "INSERT INTO usuarios(nickname,nombre,appaterno,appmaterno,contrasena,correo,usuario_tipo) VALUES('$nickname','$nombre','$appaterno','$appmaterno','$contrasena','$correo','1')";
     $resultado=$conexion -> query($query);
   }
-//header('Location: login.php');
+header('Location: login.php');
 }
  require 'views/registrate.view.php';
 //require 'C:\Users\CarlosNitsuga\GitHub\Control_de_sitios_de_Estacionamientos\Desarrollo\php\views\registrate.view.php'
