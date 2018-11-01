@@ -1,4 +1,4 @@
-class Localizacion {
+﻿class Localizacion {
   constructor( callback ) {
     if (navigator.geolocation) {
       //Obtener ubicación
@@ -22,7 +22,7 @@ function initMap() {
     //código para obtener los datos de la base de datos.
     //--------------------------------------------------------------------------
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost/Proyects%20I+D1/Control_de_sitios_de_Estacionamientos/Desarrollo/php/maps.php";
+    var url = "http://localhost/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/php/maps.php";
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         mostrarGMaps(this.responseText);
@@ -74,8 +74,8 @@ function initMap() {
 
       var bounds = new google.maps.LatLngBounds();
       const options = {
-        //center: latLong,
-        center: {lat: 19.042597, lng: -98.197717},
+        center: latLong,
+        //center: {lat: 19.042597, lng: -98.197717},
         zoom: 16
       }
 
@@ -83,10 +83,10 @@ function initMap() {
       const googleMap = new google.maps.Map(document.getElementById("map"), options);
 
       //Aquí se coloca el marcador de la ubicación del usuario.
-      var userIcon = '/Proyects I+D1/Control_de_sitios_de_Estacionamientos/Desarrollo/img/user.png';
+      var userIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/user.png';
       const marcador = new google.maps.Marker({
-        //position: latLong,
-        position: {lat: 19.042597, lng: -98.197717},
+        position: latLong,
+        //position: {lat: 19.042597, lng: -98.197717},
         map: googleMap,
         animation: google.maps.Animation.BOUNCE,
         title: "Aquí estás.",
@@ -94,7 +94,7 @@ function initMap() {
       });
 
       var infoWindow = new google.maps.InfoWindow(), marker, i;
-      var estIcon = '/Proyects I+D1/Control_de_sitios_de_Estacionamientos/Desarrollo/img/parking.png';
+      var estIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/parking.png';
       //var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
       for( i = 0; i < markers.length; i++ ) {
         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);

@@ -22,10 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
   }else {
     try {
       $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
-      if($conexion){
-
-        echo "si hay conexion";
-      }
     } catch (PDOException $e) {
       echo "Error: " . $e->getMessage();
     }
@@ -39,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
     if ($resultado != false) {
 			$errores .= '<li>El nombre de usuario ya existe</li>';
 		}
-    //emcrptar contraseña
+    //encriptar contraseña
 
     $contrasena = hash('sha512', $contrasena);
 		$password2 = hash('sha512', $password2);
@@ -51,10 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
   if ($errores =='') {
     $query = "INSERT INTO usuarios(nickname,nombre,appaterno,appmaterno,contrasena,correo,usuario_tipo) VALUES('$nickname','$nombre','$appaterno','$appmaterno','$contrasena','$correo','1')";
     $resultado=$conexion -> query($query);
-    print_r($query);
   }
 //header('Location: login.php');
 }
- require 'php/views/registrate.view.php';
+ require 'views/registrate.view.php';
 //require 'C:\Users\CarlosNitsuga\GitHub\Control_de_sitios_de_Estacionamientos\Desarrollo\php\views\registrate.view.php'
 ?>
