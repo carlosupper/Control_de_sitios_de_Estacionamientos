@@ -1,7 +1,9 @@
 <?php session_start();
 
-if (isset($_SESSION['correo'])) {
+if (isset($_SESSION['usuario'])) {
 	header('Location: ../index_user.html');
+}if(isset($_SESSION['admin'])){
+	header('Location: ../index_admin.html');
 }
 $errores = '';
 
@@ -9,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $correo = filter_var(strtolower($_POST['correo']), FILTER_SANITIZE_STRING);
 	$password = $_POST['password'];
 	$password = hash('sha512', $password);
-	echo $password, $correo;
   try {
     	  $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
 
@@ -17,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       echo "Error:" . $e->getMessage();;
   }
   $statement = $conexion->prepare('
-		SELECT * FROM usuarios WHERE correo = :correo AND contrasena = :password'
+		SELECT usuario_tipo FROM usuarios WHERE correo = :correo AND contrasena = :password'
 	);
 	$statement->execute(array(
 		':correo' => $correo,
@@ -25,11 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	));
 	$resultado = $statement->fetch();
 	if ($resultado !== false) {
-		$_SESSION['correo']=$correo;
-		header('Location: ../index_user.html');
+if($resultado['usuario_tipo']==1){
+			$_SESSION['usuario']=$correo;
+	header('Location: ../index_user.html');
+}else{
+			$_SESSION['admin']=$correo;
+	header('Location: ../index_admin.html');
+}
 	} else {
 		$errores .= '<li>Datos Incorrectos</li>';
 	}
+
  }
 require 'views/login.view.php';
 ?>
