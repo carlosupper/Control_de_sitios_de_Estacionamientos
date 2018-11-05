@@ -23,7 +23,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
       $errores .= '<li>Por favor rellena todos los datos correctamente</li>';
   }else {
     try {
+<<<<<<< HEAD
       $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
+||||||| merged common ancestors
+      $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
+      if($conexion){
+
+        echo "si hay conexion";
+      }
+=======
+      //$conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
+      $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', '');
+      if($conexion){
+        echo "si hay conexion";
+      }
+>>>>>>> d79e4b672773ccfdbe5ea6ed810202a7a6221ecd
     } catch (PDOException $e) {
       echo "Error: " . $e->getMessage();
     }
@@ -51,5 +65,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
   }
 header('Location: login.php');
 }
+<<<<<<< HEAD
  require 'views/registrate.view.php';
 ?>
+||||||| merged common ancestors
+ require 'php/views/registrate.view.php';
+//require 'C:\Users\CarlosNitsuga\GitHub\Control_de_sitios_de_Estacionamientos\Desarrollo\php\views\registrate.view.php'
+?>
+=======
+ require 'php/views/registrate.view.php';
+//require 'C:\Users\CarlosNitsuga\GitHub\Control_de_sitios_de_Estacionamientos\Desarrollo\php\views\registrate.view.php'
+?>
+>>>>>>> d79e4b672773ccfdbe5ea6ed810202a7a6221ecd
