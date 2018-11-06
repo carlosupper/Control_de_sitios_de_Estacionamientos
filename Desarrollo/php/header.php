@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- GOOGLE MAPS SCRIPT -->
-    <script src="scripts/main.js"></script>
+
+    <!-- PARKING SCRIPT -->
+    <script type="text/javascript" src="scripts/parking.js"></script>
+    <!-- GMAPS PARKING LOCATION SCRIPT -->
+    <script type="text/javascript" src="scripts/gMapsParking.js"></script>
+
   </head>
-
-
-
 
   <!-- BODY  -->
   <body>
@@ -23,7 +24,7 @@
     <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top color-nav">
       <div class="container">
-        <a class="navbar-brand" href="#inicio">
+        <a class="navbar-brand" href="./index.php">
           <img src="img/logo.png" width="35" height="35" class="d-inline-block align-top" alt="Inicio">
             F-Estacionamientos
         </a>
@@ -41,13 +42,13 @@
           <!-- ml-auto -> MarginLeft-auto -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index_general.html">Inicio</a>
+              <a class="nav-link" href="index.php">Inicio</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="help.html">Ayuda</a>
+              <a class="nav-link" href="#">Ayuda</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="php/registrate.php">Registrarse</a>
@@ -59,34 +60,3 @@
         </div>
       </div>
     </nav>
-
-    <div class="container mt-5"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 centrar">
-          <h1 class="mt-5">Bienvenido a este sitio de estacionamientos.</h1>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Selecciona una zona
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Zona 1</a>
-              <a class="dropdown-item" href="#">Zona 2</a>
-              <a class="dropdown-item" href="#">Zona 3</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- GOOGLE MAPS -->
-      <div class="row">
-        <div id="map" class="col-md-12 my-5 " style="width: 100%;height: 500px;"></div>
-        <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy1Lgx05CgWi-PxUgU2iw4P1pvaIWqL1Y&callback=initMap">
-        </script>
-      </div>
-      <!-- FIN GOOGLE MAPS -->
-
-    </div>
-  </body>
-</html>

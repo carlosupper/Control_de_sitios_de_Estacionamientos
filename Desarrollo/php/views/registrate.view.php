@@ -31,7 +31,7 @@
 
         <p class="texto-registrate">
           ¿ Ya tienes cuenta ?
-          <a href="login.php">Iniciar Sesión</a>
+          <a href="../login.php">Iniciar Sesión</a>
         </p>
       </form>
     </div>

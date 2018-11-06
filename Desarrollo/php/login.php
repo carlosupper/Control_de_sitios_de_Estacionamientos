@@ -40,3 +40,4 @@ if($resultado['usuario_tipo']==1){
  }
 require 'views/login.view.php';
 ?>
+
