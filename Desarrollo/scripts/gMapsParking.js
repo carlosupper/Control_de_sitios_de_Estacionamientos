@@ -1,4 +1,4 @@
-/*
+﻿/*
   Esta función imprime el mapa con la posición del estacionamiento seleccionado
   en "estacionamiento.php".
 */
@@ -16,7 +16,7 @@ function initMap() {
   const googleMap = new google.maps.Map(document.getElementById("mapParking"), options);
 
   //Aquí se coloca el marcador de la ubicación del usuario.
-  var userIcon = '/Proyects I+D1/Control_de_sitios_de_Estacionamientos/Desarrollo/img/parking.png';
+  var userIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/parking.png';
   const marcador = new google.maps.Marker({
     position: parkingLocation,
     map: googleMap,

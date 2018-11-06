@@ -7,27 +7,31 @@
 }
 
 body{
-  background:#1B1D35;
+  background:#63010c;
   font-size: 16px;
   font-family: "Open Sans", Arial, sans-serif, helvetica;
 }
 
 .wrap{
   text-align: center;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
   margin: auto;
-  color:#B8711B ;
+  color:#fff ;
+
 }
 
 form{
   width: 100%;
-  margin: 20px 0;
-  padding: 20px;
+  margin: 0px 0;
+  padding: 5px;
   background: #fff;
   overflow: hidden;
   box-shadow: 0 0 3px grey;
   border-top:4px solid #B8711B;
+  border-bottom: 4px solid #B8711B;
+  border-left: 4px solid #B8711B;
+  border-right: 4px solid #B8711B;
 }
 /* Estilo a los inputs */
 form input[type="text"],
@@ -39,10 +43,11 @@ form input[type="password"],
 form textarea{
   border: 1px solid #536DFE;
   border-radius: 2px;
-  padding: 16px;
+  padding: 10px;
   width: 100%;
+  text-align: center;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-family: "Open Sans", Arial, sans-serif, helvetica;
   font-size: 1em;
   color: #141938;
@@ -110,7 +115,7 @@ button:hover{
   background-color: #ffffff;
 }
 .formulario {
-	background: #2C2C47;
+	background: #601408;
 	padding: 30px;
 	margin-bottom: 30px;
 }
@@ -125,5 +130,5 @@ button:hover{
 .texto-registrate a {
 	display: block;
 	font-size: 18px;
-  color: #B8711B;
+  color: #039732;
 }

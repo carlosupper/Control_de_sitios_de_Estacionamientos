@@ -1,7 +1,9 @@
 <?php session_start();
 
-if (isset($_SESSION['correo'])) {
-	header('Location: index.php');
+if (isset($_SESSION['usuario'])) {
+	header('Location: ../index_user.html');
+}if(isset($_SESSION['admin'])){
+	header('Location: ../index_admin.html');
 }
 $errores = '';
 
@@ -10,17 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$password = $_POST['password'];
 	$password = hash('sha512', $password);
   try {
-    	  //$conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
-    	  $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', '');
-        if ($conexion) {
-        	echo "dentro";
-        }
+    	  $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
 
   } catch (PDOException $e) {
       echo "Error:" . $e->getMessage();;
   }
   $statement = $conexion->prepare('
-		SELECT * FROM usuarios1 WHERE correo = :correo AND password = :password'
+		SELECT usuario_tipo FROM usuarios WHERE correo = :correo AND contrasena = :password'
 	);
 	$statement->execute(array(
 		':correo' => $correo,
@@ -28,11 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	));
 	$resultado = $statement->fetch();
 	if ($resultado !== false) {
-		$_SESSION['correo']=$correo;
-		header('Location: index.php');
+if($resultado['usuario_tipo']==1){
+			$_SESSION['usuario']=$correo;
+	header('Location: ../index_user.html');
+}else{
+			$_SESSION['admin']=$correo;
+	header('Location: ../index_admin.html');
+}
 	} else {
 		$errores .= '<li>Datos Incorrectos</li>';
 	}
+
  }
-require 'registrate.php';
+require 'views/login.view.php';
 ?>
+

@@ -1,7 +1,9 @@
 <?php session_start();
 
-if (isset($_SESSION['correo'])) {
-  header('Location: index.php');
+if (isset($_SESSION['usuario'])) {
+  header('Location: ../index_user.php');
+}if (isset($_SESSION['admin'])) {
+  header('Location: ../index_admin.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a POST
@@ -18,43 +20,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
   $errores='';
 
   if (empty($nombre) or empty($correo) or empty($contrasena) or empty($password2) or empty($appaterno) or empty($appmaterno) or empty($nickname)) {
-    	$errores .= '<li>Por favor rellena todos los datos correctamente</li>';
+      $errores .= '<li>Por favor rellena todos los datos correctamente</li>';
   }else {
     try {
-      //$conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
-      $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', '');
-      if($conexion){
-        echo "si hay conexion";
-      }
+      $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
     } catch (PDOException $e) {
       echo "Error: " . $e->getMessage();
     }
     //buscar nombre repetido en la base de datos
     $statement = $conexion->prepare('SELECT * FROM usuarios WHERE nickname = :nickname LIMIT 1');
-		$statement->execute(array(':nickname' => $nickname));
-		$resultado = $statement->fetch();
+    $statement->execute(array(':nickname' => $nickname));
+    $resultado = $statement->fetch();
 
-    // print_r($resultado);
     //nombre = existe en la base de datos
     if ($resultado != false) {
-			$errores .= '<li>El nombre de usuario ya existe</li>';
-		}
-    //emcrptar contraseña
+      $errores .= '<li>El nombre de usuario ya existe</li>';
+    }
+    //encriptar contraseña
 
     $contrasena = hash('sha512', $contrasena);
-		$password2 = hash('sha512', $password2);
+    $password2 = hash('sha512', $password2);
 
    if ($contrasena != $password2) {
     $errores .= '<li>Las contraseñas no son iguales</li>';
     }
   }
   if ($errores =='') {
-    $query = "INSERT INTO usuarios(nickname,nombre,appaterno,appmaterno,contrasena,correo,usuario_tipo) VALUES('$nickname','$nombre','$appaterno','$appmaterno','$contrasena','$correo','1')";
+    $query = "INSERT INTO usuarios(nickname,nombre,appaterno,appmaterno,contrasena,correo,usuario_tipo) VALUES('$nickname','$nombre','$appaterno','$appmaterno','$contrasena','$correo','2')";
     $resultado=$conexion -> query($query);
-    print_r($query);
   }
-//header('Location: login.php');
+header('Location: login.php');
 }
- require 'php/views/registrate.view.php';
-//require 'C:\Users\CarlosNitsuga\GitHub\Control_de_sitios_de_Estacionamientos\Desarrollo\php\views\registrate.view.php'
+ require 'views/registrate.view.php';
 ?>

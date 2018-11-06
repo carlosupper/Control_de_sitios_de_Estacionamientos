@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header( 'Content-Type: text/html;charset=utf-8' );
 function ejecutarSQLCommand($commando){
 
-  $mysqli = new mysqli("localhost", "root", '', "control_de_sitios_de_estacionamientos");
+  $mysqli = new mysqli("localhost", "root", "sayyeah1993", "control_de_sitios_de_estacionamientos");
   mysqli_set_charset($mysqli, "utf8");
 /* check connection */
 if ($mysqli->connect_errno) {
@@ -26,7 +26,7 @@ $mysqli->close();
 function getSQLResultSet($commando){
 
 
-  $mysqli = new mysqli("localhost", "root", '', "control_de_sitios_de_estacionamientos");
+  $mysqli = new mysqli("localhost", "root", "sayyeah1993", "control_de_sitios_de_estacionamientos");
   mysqli_set_charset($mysqli, "utf8");
 /* check connection */
 if ($mysqli->connect_errno) {

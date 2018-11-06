@@ -9,7 +9,7 @@
 body {
 	font-size: 16px;
 	font-family: 'Raleway', sans-serif;
-	background: #1B1D35;
+	background: #6a0004;
 	color:#fff;
 }
 
@@ -30,23 +30,26 @@ a:hover {
 
 .titulo {
 	font-weight: 300;
-	color: #B8711B;
+	color: #fff;
 	text-align: center;
 	margin: 60px 0 30px 0;
 }
 
 .border {
 	border:none;
-	margin-bottom: 5px;
-	border-top:10px solid #B8711B;
+    margin-bottom: 1px;
+	border-top:5px solid #B8711B;
 	background: none;
 	color:none;
 }
 
 .formulario {
-	background: #2C2C47;
+	background: #601408;
 	padding: 30px;
 	margin-bottom: 30px;
+	border-bottom: 5px solid #B8711B;
+	border-left: 5px solid #B8711B;
+	border-right: 5px solid #B8711B;
 }
 
 .formulario .form-group {
@@ -135,6 +138,7 @@ a:hover {
 .texto-registrate a {
 	display: block;
 	font-size: 18px;
+	color: #039732;
 }
 
 .contenido article {
