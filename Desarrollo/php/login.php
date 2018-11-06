@@ -12,20 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$password = $_POST['password'];
 	$password = hash('sha512', $password);
   try {
-<<<<<<< HEAD
     	  $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
-||||||| merged common ancestors
-    	  $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
-        if ($conexion) {
-        	echo "dentro";
-        }
-=======
-    	  //$conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
-    	  $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', '');
-        if ($conexion) {
-        	echo "dentro";
-        }
->>>>>>> d79e4b672773ccfdbe5ea6ed810202a7a6221ecd
 
   } catch (PDOException $e) {
       echo "Error:" . $e->getMessage();;
@@ -51,5 +38,6 @@ if($resultado['usuario_tipo']==1){
 	}
 
  }
-require 'registrate.php';
+require 'views/login.view.php';
 ?>
+
