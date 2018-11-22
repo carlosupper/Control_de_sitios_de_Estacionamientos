@@ -43,7 +43,7 @@
             <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
         </div>
         </form>
-   <script src="scripts/default.js"></script>
+   <!--script src="scripts/default.js"></script-->
 
 
           <!-- ml-auto -> MarginLeft-auto -->

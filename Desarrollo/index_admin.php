@@ -1,3 +1,10 @@
+<?php
+
+  $id_Recv=$_GET["idEst"];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,6 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css">
+      <!-- UPDATE CAJONES SCRIPT -->
+    <script type="text/javascript" src="scripts/update.js"></script>
+    <!-- actualiza en tiempo -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   </head>
 
@@ -57,28 +68,29 @@
       </div>
     </nav>
 
+
     <div class="container mt-5"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-12 centrar">
-          <h2 class="mt-5">Bienvenido, NOMBRE USUARIO</h2>
-          <h1>Estacionamiento el auto feliz</h1>
+          <h1 class="mt-5">Bienvenido, <h3 id="nombre"></h3></h1>
+          <h1 id="name_parking"></h1>
         </div>
       </div>
 
       <div class="row mt-5">
         <div class="col-md-12 centrar">
-          <h1>Sistema de cobro</h1>
-          <button class="btn btn-success" type="button">Generar ticket</button>
-          <button class="btn btn-success" type="button">Cobrar</button>
+          <h1>Sistema de estacionamiento</h1>
+          <button id="Entrar"class="btn btn-success" type="button">Ingresar</button>
+          <button id="Salir" class="btn btn-success" type="button">Salir</button>
         </div>
       </div>
 
       <div class="row mt-5">
         <div class="col-md-12 centrar">
           <h1>Estado actual</h1>
-          <p>Lugares vacíos: 12</p>
-          <p>Lugares ocupados: 18</p>
+          <p id="vacios">Lugares disponibles: </p>
+          <p id="ocupados">Lugares ocupados: </p>
         </div>
       </div>
 
@@ -96,19 +108,45 @@
 
     </div>
 
+    <script>
+      /*Variables globales
+        id_parking = ID de estacionamiento
+        dat = obtiene los datos del JSON
+      */
+      var id_parking= "<?= $id_Recv ?>";
+      console.log(id_parking);
+      var dat;
+      /* Función que obtiene los datos del json.
+         Esta función es llamada desde el archivo de update.js
+         Requiere:
+            id_parking = ID de estacionamiento
+            function() = es la función a la que llamara para actualizar los datos de la pagina
+      */
+      datos(id_parking,function(){
+         dat = JSON.parse(this.responseText);
+         //Obtiene el nombre del estacionamiento
+         var nombre= dat[1];
+         $('#name_parking').html(nombre);
+         $('#nombre').html(dat[2]);
+         //Incrementa el valor de ocupados en la BD hacer click
+         $('#Entrar').click(function(){
+            update(id_parking,dat[0]=parseInt(dat[0])+1);
+            setCajones();
+        });
+         //Decrementa el valor de ocupados en la BD hacer click
+         $('#Salir').click(function(){
+            update(id_parking,dat[0]=parseInt(dat[0])-1);
+            setCajones();
+        });
+      });
 
-  </body>
+      /*Función que actualiza las estiquetas en donde se muestra los lugares vacios y los lugares ocupados*/
+      function setCajones(){
+        $('#ocupados').html('Lugares ocupados: '+dat[0]);
+        var diponibles = dat[3] - dat[0];
+        $('#vacios').html('Lugares disponibles:'+(dat[3]-dat[0]));
+      }
+    </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
 </html>

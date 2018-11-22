@@ -132,7 +132,7 @@ function mostrarGMaps(response, userLocation) {
 
   var infoWindow = new google.maps.InfoWindow(), marker, i;
 
-  var estIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/parking.png';
+  var estIcon;
 
   //var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   for( i = 0; i < markers.length; i++ ) {
@@ -142,13 +142,13 @@ function mostrarGMaps(response, userLocation) {
 
       switch (markers[i][4]) {
         case 1:
-          estIcon = '/Control_de_sitios_de_Estacionamientos/Desarrollo/img/verde.png'
+          estIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/verde.png'
           break;
         case 2:
-          estIcon = '/Control_de_sitios_de_Estacionamientos/Desarrollo/img/amarillo.png'
+          estIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/amarillo.png'
           break;
         case 3:
-          estIcon = '/Control_de_sitios_de_Estacionamientos/Desarrollo/img/rojo.png'
+          estIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/rojo.png'
           break;
       }
 

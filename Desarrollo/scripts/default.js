@@ -21,6 +21,8 @@ function autocompletar(arreglo){
       console.log(this.responseText);
         
         const arreglo = JSON.parse(this.responseText);
+        console.log("Los datos son: ");
+        console.log(arreglo[1]);
         
         if (arreglo.length==0) return false;
         arreglo.forEach(item => {

@@ -34,12 +34,17 @@ if($resultado['usuario_tipo']==1){
 	$_SESSION['admin']=$correo;
 	$id=$resultado['id_usuarios'];
 	echo $id;
-	if($resultset=getSQLResultSet("SELECT id_estacionamiento FROM `estacionamientos` WHERE `usuario_id` = '$id'")){
-	while ($row = $resultset->fetch_array(MYSQLI_NUM)){
-		echo json_encode($row);
-		}
-	}
-	header('Location: ../index_admin.html');
+	$statement = $conexion->prepare('
+	SELECT id_estacionamiento FROM estacionamientos WHERE usuario_id = :id'
+	);
+	$statement->execute(array(
+		':id' => $id
+	));
+	$resultado = $statement->fetch();
+	$id_estacionamiento=$resultado['id_estacionamiento'];
+	echo $id_estacionamiento;
+
+	header("Location: ../index_admin.php?idEst=$id_estacionamiento");
 }
 	} else {
 		$errores .= '<li>Datos Incorrectos</li>';
