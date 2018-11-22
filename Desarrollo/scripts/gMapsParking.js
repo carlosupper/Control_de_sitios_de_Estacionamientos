@@ -29,6 +29,7 @@ function initMap() {
   //Se carga el mapa en la página web.
   const googleMap = new google.maps.Map(document.getElementById("mapParking"), options);
 
+
   //Aquí se coloca el marcador de la ubicación del usuario, con el color
   //dependiendo del cupo disponible.
   var estIcon;
@@ -44,7 +45,6 @@ function initMap() {
       estIcon = '/Control_de_sitios_de_Estacionamientos/Desarrollo/img/rojo.png'
       break;
   }
-  //var userIcon = '/Control_de_sitios_de_Estacionamientos/Desarrollo/img/parking.png';
   const marcador = new google.maps.Marker({
     position: parkingLocation,
     map: googleMap,

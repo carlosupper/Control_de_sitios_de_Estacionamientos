@@ -12,7 +12,9 @@
 
 var xmlhttp = new XMLHttpRequest();
 //Ruta de consulta de php
-var url = "http://localhost/Control_de_sitios_de_Estacionamientos/Desarrollo/php/consulta-estacionamiento.php?nombre="+nombre;
+
+var url = "http://localhost/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/php/consulta-estacionamiento.php?nombre="+nombre;
+
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
       mostrar(this.responseText);
