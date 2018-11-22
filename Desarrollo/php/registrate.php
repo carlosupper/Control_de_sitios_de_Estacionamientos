@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
     }
   }
   if ($errores =='') {
-    $query = "INSERT INTO usuarios(nickname,nombre,appaterno,appmaterno,contrasena,correo,usuario_tipo) VALUES('$nickname','$nombre','$appaterno','$appmaterno','$contrasena','$correo','2')";
+    $query = "INSERT INTO usuarios(nickname,nombre,appaterno,appmaterno,contrasena,correo,usuario_tipo) VALUES('$nickname','$nombre','$appaterno','$appmaterno','$contrasena','$correo','1')";
     $resultado=$conexion -> query($query);
   }
 header('Location: login.php');

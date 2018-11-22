@@ -1,5 +1,5 @@
-<?php session_start();
-
+<?php session_start();	
+include('functions.php');
 if (isset($_SESSION['usuario'])) {
 	header('Location: ../index_user.html');
 }if(isset($_SESSION['admin'])){
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       echo "Error:" . $e->getMessage();;
   }
   $statement = $conexion->prepare('
-		SELECT usuario_tipo FROM usuarios WHERE correo = :correo AND contrasena = :password'
+	SELECT id_usuarios,usuario_tipo FROM usuarios WHERE correo = :correo AND contrasena = :password'
 	);
 	$statement->execute(array(
 		':correo' => $correo,
@@ -30,7 +30,14 @@ if($resultado['usuario_tipo']==1){
 			$_SESSION['usuario']=$correo;
 	header('Location: ../index_user.html');
 }else{
-			$_SESSION['admin']=$correo;
+	$_SESSION['admin']=$correo;
+	$id=$resultado['id_usuarios'];
+	echo $id;
+	if($resultset=getSQLResultSet("SELECT id_estacionamiento FROM `estacionamientos` WHERE `usuario_id` = '$id'")){
+	while ($row = $resultset->fetch_array(MYSQLI_NUM)){
+		echo json_encode($row);
+		}
+	}
 	header('Location: ../index_admin.html');
 }
 	} else {

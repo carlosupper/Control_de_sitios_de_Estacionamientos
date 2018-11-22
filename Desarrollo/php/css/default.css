@@ -1,0 +1,53 @@
+body{
+  font-family: arial, helvetica, sans-serif;
+}
+
+form{
+  margin: 60px auto;
+  width : 100px;
+}
+.autocompletar{
+  position: fixed;
+  display: inline-block;
+}
+strong{
+  color: white;
+}
+#estacionamiento{
+  background-color: #eee;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.9em;
+  padding: 5px 15px;
+  outline: none;
+  width: 210px;
+}
+.lista-autocompletar-items{
+  color: #cccc;
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  z-index: 99;
+
+  top: 100%;
+  left: 20px;
+  right: 0;
+  width: 93%;
+}
+.lista-autocompletar-items div{
+  padding: 10px;
+  cursor: pointer;
+  background-color: #63010c;
+  border-bottom:  1px solid #d4d4d4;
+}
+
+.lista-autocompletar-items div:hover{
+  background-color: dodgerblue;
+}
+.autocompletar-active{
+  background-color: dodgerblue !important;
+  color: #a1caff;
+}
+.autocompletar-active strong{
+  color: #fff;
+}

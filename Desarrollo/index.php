@@ -19,13 +19,13 @@
         <script async defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy1Lgx05CgWi-PxUgU2iw4P1pvaIWqL1Y&callback=initMap">
         </script>
-
+<script src="scripts/default.js"></script>
         <!-- GOOGLE MAPS SCRIPT -->
         <script type="text/javascript" src="scripts/main.js"></script>
 
       </div>
       <!-- FIN GOOGLE MAPS -->
-
+        <script src="default.js"></script>
     </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" dir="ltr">
 
   <head>
     <meta charset="utf-8">
@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css">
+<!--BUSQUEDA AUTOCOMPLETADOR-->
+<link rel="stylesheet" href="php/css/default.css">
+       
 
     <!-- PARKING SCRIPT -->
     <script type="text/javascript" src="scripts/parking.js"></script>
@@ -33,11 +36,14 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-
-          <form class="form-inline my-2 my-lg-0 ml-auto">
-            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese su búsqueda" aria-label="Search">
+<form class="form-inline my-2 my-lg-0 ml-auto" action="" method="post" autocomplete="off">
+<div class="autocompletar">
+            <input  type="text" name="estacionamiento" id="estacionamiento" placeholder="Busque su estacionamiento" >
             <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
+        </div>
+        </form>
+   <script src="scripts/default.js"></script>
+
 
           <!-- ml-auto -> MarginLeft-auto -->
           <ul class="navbar-nav ml-auto">
