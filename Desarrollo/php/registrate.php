@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
   $contrasena = $_POST['contrasena'];
   $password2 = $_POST['password2'];
 
- //echo "$nombre . $appaterno . $appmaterno . $nickname . $correo . $contrasena";
+ echo "$nombre . $appaterno . $appmaterno . $nickname . $correo . $contrasena";
 
   $errores='';
 
@@ -52,4 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
 header('Location: login.php');
 }
  require 'views/registrate.view.php';
+
 ?>
+
