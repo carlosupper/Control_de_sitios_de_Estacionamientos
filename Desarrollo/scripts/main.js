@@ -120,7 +120,7 @@ function mostrarGMaps(response, userLocation) {
 
   //Aquí se coloca el marcador de la ubicación del usuario.
 
-  var userIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/user.png';
+  var userIcon = '/Control_de_sitios_de_Estacionamientos/Desarrollo/img/user.png';
 
   const marcador = new google.maps.Marker({
     position: userLocation,
@@ -132,7 +132,7 @@ function mostrarGMaps(response, userLocation) {
 
   var infoWindow = new google.maps.InfoWindow(), marker, i;
 
-  var estIcon = '/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/img/parking.png';
+  var estIcon;
 
   //var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   for( i = 0; i < markers.length; i++ ) {
@@ -179,9 +179,6 @@ function mostrarGMaps(response, userLocation) {
     this.setZoom(15);
     google.maps.event.removeListener(boundsListener);
   });
-  var p = "PRUEBAAAAAAA";
-  return p;
-
 }
 
 var varGlobal;
@@ -193,7 +190,7 @@ function initMap() {
     //--------------------------------------------------------------------------
     var xmlhttp = new XMLHttpRequest();
 
-    var url = "http://localhost/Github/Control_de_sitios_de_Estacionamientos/Desarrollo/php/maps.php";
+    var url = "http://localhost/Control_de_sitios_de_Estacionamientos/Desarrollo/php/maps.php";
 
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
