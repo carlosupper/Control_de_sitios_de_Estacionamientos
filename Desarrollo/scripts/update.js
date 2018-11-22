@@ -1,3 +1,4 @@
+
 //Método que actualiza los cajones ocupados del estacionamiento
 function update(id_parking,ocupados){
 	var xmlhttp = new XMLHttpRequest();

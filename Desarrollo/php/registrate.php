@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si el metodo de envio es igual a 
       $errores .= '<li>Por favor rellena todos los datos correctamente</li>';
   }else {
     try {
-      $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', 'sayyeah1993');
+      $conexion = new PDO('mysql:host=localhost;dbname=control_de_sitios_de_estacionamientos', 'root', '');
     } catch (PDOException $e) {
       echo "Error: " . $e->getMessage();
     }
@@ -54,4 +54,3 @@ header('Location: login.php');
  require 'views/registrate.view.php';
 
 ?>
-

@@ -143,10 +143,10 @@
       /*Función que actualiza las estiquetas en donde se muestra los lugares vacios y los lugares ocupados*/
       function setCajones(){
         $('#ocupados').html('Lugares ocupados: '+dat[0]);
-        var diponibles = dat[3] - dat[0];
         $('#vacios').html('Lugares disponibles:'+(dat[3]-dat[0]));
       }
     </script>
 
-</body>
+
+  </body>
 </html>

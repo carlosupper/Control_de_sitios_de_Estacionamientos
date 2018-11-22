@@ -1,3 +1,4 @@
+
 <?php
 include('functions.php');
 $id_estacionamiento = $_GET["id_estacionamiento"];
